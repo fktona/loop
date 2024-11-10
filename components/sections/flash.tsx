@@ -51,7 +51,7 @@ export default function Flash() {
 
   return (
     <div className="w-full h-[400px] sm:h-[500px] relative flex flex-col items-center justify-center p-4">
-      <Image src="/b2.JPG" fill alt="Lifestyle" className="object-cover" />
+      <Image src="/b2.jpg" fill alt="Lifestyle" className="object-cover" />
       <div className="absolute inset-0 bg-black/40" />
       <div className="w-full container space-y-4 sm:space-y-8 relative z-20">
         <div className="space-y-2 sm:space-y-4 max-w-full sm:max-w-[80%] md:max-w-[60%] relative z-30">

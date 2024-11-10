@@ -23,7 +23,7 @@ export default function Hero() {
           <span className=" ">CHOOSE</span>
           <div className="w-full hidden  h-20  md:flex items-center justify-end relative rounded-[50px] mt-4 sm:mt-0">
             <Image
-              src="/b2.JPG"
+              src="/b2.jpg"
               fill
               alt="Lifestyle"
               className="object-cover  rounded-[50px]  relative"
@@ -45,23 +45,23 @@ export default function Hero() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full sm:w-fit my-10 sm:my-20 place-content-center mx-auto gap-8">
         <Image
-          src="/h1.JPG"
+          src="/h1.jpg"
           height={1920}
           width={1080}
           alt="Fashion style 1"
           className="object-contain w-full sm:w-fit h-[700px] max-h-fit sm:h-[400px]"
         />
         <Image
-          src="/h2.JPG"
+          src="/h2.jpg"
           height={1920}
           width={1080}
           alt="Fashion style 2"
           className="object-contain w-full sm:w-fit h-[700px]  max-h-fit sm:h-[400px]"
         />
         <Image
-          src="/h3.JPG"
+          src="/h3.jpg"
           height={1920}
-          width={400}
+          width={1080}
           alt="Fashion style 3"
           className="object-contain w-full sm:w-fit h-[700px]  max-h-fit sm:h-[400px] col-span-1 sm:col-span-2 lg:col-span-1 mx-auto"
         />
