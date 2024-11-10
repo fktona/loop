@@ -25,7 +25,7 @@ export function Navbar() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-4 sm:px-6 md:px-[50px]  lg:px-[100px]"
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-4 sm:px-6 md:px-[50px]  lg:px-[70px]"
       initial={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
       animate={{
         backgroundColor: scrolled
