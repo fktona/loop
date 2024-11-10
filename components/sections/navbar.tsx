@@ -35,7 +35,22 @@ export function Navbar() {
       }}
       transition={{ duration: 0.3 }}
     >
-      <nav className="container mx-auto flex items-center justify-between">
+      <motion.nav
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, y: -20 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, delay: 2 },
+          },
+        }}
+        transition={{
+          ease: "linear",
+        }}
+        className="container mx-auto flex items-center justify-between"
+      >
         <Link href="/" className="text-2xl font-bold tracking-tighter group">
           <span className="inline-block transition-transform duration-300 group-hover:scale-110">
             L
@@ -92,7 +107,7 @@ export function Navbar() {
             </SheetContent>
           </Sheet>
         </div>
-      </nav>
+      </motion.nav>
     </motion.header>
   );
 }
@@ -107,7 +122,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className="relative text-sm font-medium text-gray-700 transition-colors hover:text-gray-900 group"
+      className="relative text-sm hover-underline-animation font-medium text-gray-700 transition-colors hover:text-gray-900 group"
     >
       <span className="relative z-10">{children}</span>
       <motion.span

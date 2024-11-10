@@ -39,7 +39,7 @@ export default function Product() {
         </Button>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 relative gap-8">
-        <div className="hidden sm:block absolute top-20 right-[calc(50%-180px)]">
+        <div className="hidden lg:block absolute top-20 right-[calc(50%-180px)]">
           <CircularText
             text="FIXED PRICE. FIXED PRICE. "
             textColor="white"
@@ -68,7 +68,7 @@ export default function Product() {
               className="object-contain w-full"
             />
 
-            <div className="absolute left-2 bottom-2 text-center   transform origin-top-right">
+            <div className="absolute left-2 bottom-2 text-center lg:hidden  transform origin-top-right">
               <div className="bg-[#1236DB] text-white px-8 py-2 text-lg font-bold shadow-lg">
                 <span className="text-2xl font-bold">
                   {formatter.format(100)}

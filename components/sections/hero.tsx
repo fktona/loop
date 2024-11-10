@@ -1,94 +1,141 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaStarOfLife } from "react-icons/fa";
 import { MoveRight } from "lucide-react";
+import StylesGallery from "../style";
+import { motion, AnimatePresence } from "framer-motion";
+
+const containerVariants = {
+  visible: {
+    transition: {
+      delayChildren: 1.5,
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const textyVariants = {
+  hidden: { y: 100, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const galleryVariants = {
+  center: { y: "-30%", opacity: 1 },
+  bottom: { y: 0, opacity: 1 },
+};
 
 export default function Hero() {
-  return (
-    <section className="container font-neue mx-auto my-10 sm:my-20 px-4 sm:px-8 lg:px-[100px] py-6 sm:py-12">
-      <div className="w-full mb-10   h-20 md:hidden flex items-center justify-end relative rounded-[50px] mt-14">
-        <Image
-          src="/b2.jpg"
-          fill
-          alt="Lifestyle"
-          className="object-cover rounded-[50px] relative"
-        />
-        <button className="w-10 sm:w-12 text-white aspect-square rounded-full flex items-center justify-center bg-[#1236DB] mr-4 sm:mr-6 relative z-30">
-          <MoveRight className="w-5 h-5 sm:w-6 sm:h-6" />
-        </button>
-      </div>
+  const [showHeading, setShowHeading] = useState(false);
 
-      <div className="flex flex-col w-full text-6xl justify-center lg:justify-start items-center lg:items-start  lg:text-[100px] tracking-[-0.04em] leading-[110%] mb-4 ">
-        <div className="flex w-full flex-row  text-center lg:text-start items-start  justify-between lg:items-center lg:gap-5 gap-2">
-          <span className=" ">CHOOSE</span>
-          <div className="w-full hidden  h-20  md:flex items-center justify-end relative rounded-[50px] mt-4 sm:mt-0">
+  useEffect(() => {
+    const timer = setTimeout(() => setShowHeading(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <section className="container font-neue mx-auto my-10 px-4 sm:px-8 lg:px-[100px] py-6 sm:py-12">
+      <AnimatePresence>
+        {showHeading && (
+          <motion.div
+            variants={textyVariants}
+            className="w-full mb-10 h-20 md:hidden flex items-center justify-end relative rounded-[50px] mt-14"
+          >
             <Image
               src="/b2.jpg"
               fill
               alt="Lifestyle"
-              className="object-cover  rounded-[50px]  relative"
+              className="object-cover rounded-[50px] relative"
             />
             <button className="w-10 sm:w-12 text-white aspect-square rounded-full flex items-center justify-center bg-[#1236DB] mr-4 sm:mr-6 relative z-30">
               <MoveRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
-          </div>
-          <span className="w-full sm:w-auto lg:mt-4 mt-0">YOUR</span>
-        </div>
-        <div className="flex w-full flex-col text-center md:text-start  items-start md:flex-row  md:justify-between gap-3 mt-4 ">
-          <span className="w-full md:w-auto">FASHION STYLE!</span>
-          <p className="lg:text-base text-center md:text-start text-[18px] space-x-5 tracking-normal leading-6 mt-4 sm:mt-0">
-            Pike it up! This beautiful <br className="hidden md:block" />
-            design will keep you looking <br className="hidden md:block" />{" "}
-            presentable on the go
-          </p>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full sm:w-fit my-10 sm:my-20 place-content-center mx-auto gap-8">
-        <Image
-          src="/h1.jpg"
-          height={1920}
-          width={1080}
-          alt="Fashion style 1"
-          className="object-contain w-full sm:w-fit h-[700px] max-h-fit sm:h-[400px]"
-        />
-        <Image
-          src="/h2.jpg"
-          height={1920}
-          width={1080}
-          alt="Fashion style 2"
-          className="object-contain w-full sm:w-fit h-[700px]  max-h-fit sm:h-[400px]"
-        />
-        <Image
-          src="/h3.jpg"
-          height={1920}
-          width={1080}
-          alt="Fashion style 3"
-          className="object-contain w-full sm:w-fit h-[700px]  max-h-fit sm:h-[400px] col-span-1 sm:col-span-2 lg:col-span-1 mx-auto"
-        />
-      </div>
-      {/* <div className="flex flex-wrap justify-center sm:justify-between space-x-4 sm:space-x-8 mb-8 sm:mb-12">
-        {["amazon", "paypal", "aliexpress", "zalando", "google", "jacobs"].map(
-          (brand) => (
-            <Image
-              key={brand}
-              src="/placeholder.svg?height=30&width=80"
-              height={30}
-              width={80}
-              alt={brand}
-              className="opacity-50 bg-slate-500 mb-4 sm:mb-0"
-            />
-          )
+          </motion.div>
         )}
-      </div> */}
-      <div className="text-center text-2xl sm:text-4xl my-[30px] sm:my-[60px] leading-[150%] max-w-2xl mx-auto">
-        Since 1987, LOOP has been founded and loved. Continues to create a new
-        fashion
-        <div className="flex items-center justify-around">
-          <FaStarOfLife color="#1236DB" className="w-4 h-4 sm:w-6 sm:h-6" />
-          trends to be the finest products.
-          <FaStarOfLife color="#1236DB" className="w-4 h-4 sm:w-6 sm:h-6" />
-        </div>
-      </div>
+      </AnimatePresence>
+
+      <motion.div
+        variants={containerVariants}
+        animate="visible"
+        initial="hidden"
+        className="flex flex-col overflow-hidden w-full text-4xl sm:mt-10 justify-center lg:justify-start items-center lg:items-start lg:text-[100px] tracking-[-0.04em] leading-[110%] mb-4"
+      >
+        <AnimatePresence>
+          {showHeading && (
+            <motion.div
+              key="heading"
+              initial="hidden"
+              animate="visible"
+              variants={textyVariants}
+              className="w-full"
+            >
+              <div className="overflow-hidden w-full">
+                <div className="flex w-full overflow-hidden flex-row text-center lg:text-start items-start justify-center md:justify-between lg:items-center lg:gap-5 gap-2">
+                  <span className="">CHOOSE</span>
+                  <div className="w-full hidden h-20 md:flex items-center justify-end relative rounded-[50px] mt-4 sm:mt-0">
+                    <Image
+                      src="/b2.jpg"
+                      fill
+                      alt="Lifestyle"
+                      className="object-cover rounded-[50px] relative"
+                    />
+                    <button className="w-10 sm:w-12 text-white aspect-square rounded-full flex items-center justify-center bg-[#1236DB] mr-4 sm:mr-6 relative z-30">
+                      <MoveRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </button>
+                  </div>
+                  <span className="sm:w-auto lg:mt-4 mt-0">YOUR</span>
+                </div>
+              </div>
+              <div className="overflow-hidden w-full">
+                <div className="flex w-full flex-col text-center md:text-start items-start md:flex-row md:justify-between gap-3 mt-4">
+                  <span className="w-full md:w-auto">FASHION STYLE!</span>
+                  <p className="lg:text-base text-center md:text-start text-[18px] space-x-5 tracking-normal leading-6 mt-4 sm:mt-0">
+                    Pike it up! This beautiful{" "}
+                    <br className="hidden md:block" />
+                    design will keep you looking{" "}
+                    <br className="hidden md:block" /> presentable on the go
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+
+      <motion.div
+        initial="center"
+        animate={showHeading ? "bottom" : "center"}
+        variants={galleryVariants}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        style={{
+          position: "relative",
+          zIndex: showHeading ? 0 : 1,
+          marginTop: showHeading ? 0 : "100px",
+        }}
+      >
+        <StylesGallery />
+      </motion.div>
+      <AnimatePresence>
+        {showHeading && (
+          <div className="text-center text-2xl sm:text-4xl my-[30px] sm:my-[60px] leading-[150%] max-w-2xl mx-auto">
+            Since 1987, LOOP has been founded and loved. Continues to create a
+            new fashion
+            <div className="flex items-center justify-around">
+              <FaStarOfLife color="#1236DB" className="w-4 h-4 sm:w-6 sm:h-6" />
+              trends to be the finest products.
+              <FaStarOfLife color="#1236DB" className="w-4 h-4 sm:w-6 sm:h-6" />
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

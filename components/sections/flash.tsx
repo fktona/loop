@@ -55,7 +55,7 @@ export default function Flash() {
       <div className="absolute inset-0 bg-black/40" />
       <div className="w-full container space-y-4 sm:space-y-8 relative z-20">
         <div className="space-y-2 sm:space-y-4 max-w-full sm:max-w-[80%] md:max-w-[60%] relative z-30">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-bold tracking-tighter text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-bold  text-white">
             Check it out
             <br />
             today's flashsale

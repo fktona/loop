@@ -7,28 +7,6 @@ import { Button } from "../ui/button";
 export default function Component() {
   return (
     <footer className="w-full border-t">
-      <style jsx global>{`
-        .hover-underline-animation {
-          display: inline-block;
-          position: relative;
-        }
-        .hover-underline-animation::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          transform: scaleX(0);
-          height: 1px;
-          bottom: 0;
-          left: 0;
-          background-color: currentColor;
-          transform-origin: bottom right;
-          transition: transform 0.25s ease-out;
-        }
-        .hover-underline-animation:hover::after {
-          transform: scaleX(1);
-          transform-origin: bottom left;
-        }
-      `}</style>
       <div className="container px-4 py-12 mx-auto sm:px-6 md:px-[50px] mt-20  lg:px-[70px]">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>

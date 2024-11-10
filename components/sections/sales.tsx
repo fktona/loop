@@ -8,7 +8,7 @@ import { formatter } from "@/lib/utils";
 function Sales() {
   return (
     <section className="container relative mt-20 px-4 sm:px-8 lg:px-[100px] mx-auto py-6 sm:py-12">
-      <div className="hidden sm:block  absolute z-20 bottom-16 left-28">
+      <div className="hidden lg:block  absolute z-20 bottom-16 left-28">
         <CircularText
           text="SUMMER SALE SUMMER SALE. "
           textColor="white"
@@ -34,7 +34,7 @@ function Sales() {
             alt="Women's black crop-top"
             className="w-full aspect-[3/4] object-cover"
           />
-          <div className="absolute left-2 bottom-2 text-center   transform origin-top-right">
+          <div className="absolute left-2 bottom-2 text-center lg:hidden   transform origin-top-right">
             <div className="bg-[#1236DB] text-white px-8 py-2 text-lg font-bold shadow-lg">
               <span className="text-xl font-bold flex gap-2">
                 SUMMER SALE <Star size={24} fill="white" />
