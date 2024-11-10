@@ -29,7 +29,7 @@ export default function Component() {
           transform-origin: bottom left;
         }
       `}</style>
-      <div className="container px-4 py-12 mx-auto sm:px-6 md:px-[50px]  lg:px-[70px]">
+      <div className="container px-4 py-12 mx-auto sm:px-6 md:px-[50px] mt-20  lg:px-[70px]">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
             <h3 className="mb-4 text-sm font-medium uppercase">About</h3>

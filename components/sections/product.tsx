@@ -59,13 +59,23 @@ export default function Product() {
             for your loved ones. it is a perfect gift for your loved ones. Use
             it to make a statement.
           </p>
-          <Image
-            src="https://m.media-amazon.com/images/I/8178fp8pV5L._SY800_.jpg"
-            height={500}
-            width={1920}
-            alt="Sapphire necklace model"
-            className="object-contain w-full"
-          />
+          <div className="relative">
+            <Image
+              src="https://m.media-amazon.com/images/I/8178fp8pV5L._SY800_.jpg"
+              height={500}
+              width={1920}
+              alt="Sapphire necklace model"
+              className="object-contain w-full"
+            />
+
+            <div className="absolute left-2 bottom-2 text-center   transform origin-top-right">
+              <div className="bg-[#1236DB] text-white px-8 py-2 text-lg font-bold shadow-lg">
+                <span className="text-2xl font-bold">
+                  {formatter.format(100)}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="pb-4 sm:pb-20 flex flex-col-reverse">
           <div className="mt-3">

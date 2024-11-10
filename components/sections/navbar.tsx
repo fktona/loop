@@ -51,10 +51,10 @@ export function Navbar() {
           </span>
         </Link>
         <div className="hidden md:flex space-x-6">
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
+          <NavLink href="#">Men</NavLink>
+          <NavLink href="#">Women</NavLink>
+          <NavLink href="#e">Sale</NavLink>
+          <NavLink href="#">Collections</NavLink>
         </div>
         <div className="flex items-center space-x-4">
           <NavIconButton icon={<Search className="h-5 w-5" />} label="Search" />
@@ -84,10 +84,10 @@ export function Navbar() {
                 <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
               <div className="flex flex-col space-y-4 mt-6">
-                <MobileNavLink href="/men">Men</MobileNavLink>
-                <MobileNavLink href="/women">Women</MobileNavLink>
-                <MobileNavLink href="/sale">Sale</MobileNavLink>
-                <MobileNavLink href="/collections">Collections</MobileNavLink>
+                <MobileNavLink href="#">Men</MobileNavLink>
+                <MobileNavLink href="#">Women</MobileNavLink>
+                <MobileNavLink href="#">Sale</MobileNavLink>
+                <MobileNavLink href="#">Collections</MobileNavLink>
               </div>
             </SheetContent>
           </Sheet>

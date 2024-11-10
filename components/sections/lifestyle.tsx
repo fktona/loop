@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Lifestyle() {
   return (
-    <section className="relative h-[300px] sm:h-[400px] md:h-[500px] mb-6 sm:mb-8 md:mb-12 ">
+    <section className="relative h-[300px] sm:h-[400px] md:h-[500px] mt-20  sm:mb-8 md:mb-12 ">
       <Image src="/b1.jpg" fill alt="Lifestyle" className="object-cover" />
       <div className="absolute inset-0 bg-black/40 px-4 sm:px-6 md:px-[50px]  lg:px-[70px] flex flex-col justify-between">
         <div className="text-white text-start pt-4 sm:pt-6 md:pt-10">
