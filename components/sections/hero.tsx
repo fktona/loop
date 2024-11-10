@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="container font-neue mx-auto my-10 sm:my-20 px-4 sm:px-8 lg:px-[100px] py-6 sm:py-12">
       <div className="w-full mb-10   h-20 md:hidden flex items-center justify-end relative rounded-[50px] mt-14">
         <Image
-          src="/b2.JPG"
+          src="/b2.jpg"
           fill
           alt="Lifestyle"
           className="object-cover rounded-[50px] relative"
