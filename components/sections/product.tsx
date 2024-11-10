@@ -11,7 +11,7 @@ import { span } from "framer-motion/m";
 
 export default function Product() {
   return (
-    <section className="container relative isolate mx-auto px-4 sm:px-8 overflow-hidden lg:px-[100px] py-6 sm:py-12">
+    <section className="container relative isolate mx-auto px-4 sm:px-8 overflow-hidden lg:px-[70px] py-6 sm:py-12">
       <div className="lg:text-[250px] text-[120px] -top-4 font-neue lg:-left-16 -left-5 -z-10  overflw-hidden absolute font-bold tracking-tighter group text-stroke">
         <span className="inline-block  transition-transform duration-300 group-hover:scale-110">
           L
