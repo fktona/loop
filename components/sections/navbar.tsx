@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Search, ShoppingBag, Menu } from "lucide-react";
+import { Search, ShoppingBag, Menu, Scroll } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { ScrollingText } from "../scrollingText";
 
 export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
@@ -25,7 +26,7 @@ export function Navbar() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 px-4 py-4 sm:px-6 md:px-[50px]  lg:px-[70px]"
+      className="fixed top-0 overflow-hidden left-0 right-0 z-50"
       initial={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
       animate={{
         backgroundColor: scrolled
@@ -35,6 +36,13 @@ export function Navbar() {
       }}
       transition={{ duration: 0.3 }}
     >
+      <div className=" bg-[#1236DB] max-w-screen-2xl mx-auto">
+        <ScrollingText
+          text="CHRISTMAS SALE IS ON! UP TO 30% OFF ON ALL PRODUCTS"
+          direction={1}
+          key="scrolling-text-1"
+        />
+      </div>
       <motion.nav
         initial="hidden"
         animate="visible"
@@ -49,7 +57,7 @@ export function Navbar() {
         transition={{
           ease: "linear",
         }}
-        className="container mx-auto flex items-center justify-between"
+        className="container py-4 mx-auto flex items-center justify-between  px-4  sm:px-6 md:px-[50px]  lg:px-[70px]"
       >
         <Link href="/" className="text-2xl font-bold tracking-tighter group">
           <span className="inline-block transition-transform duration-300 group-hover:scale-110">

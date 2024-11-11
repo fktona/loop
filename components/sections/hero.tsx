@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaStarOfLife } from "react-icons/fa";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Scroll } from "lucide-react";
 import StylesGallery from "../style";
 import { motion, AnimatePresence } from "framer-motion";
+import { ScrollingPay } from "../scrollingText";
 
 const containerVariants = {
   visible: {
@@ -122,6 +123,20 @@ export default function Hero() {
         }}
       >
         <StylesGallery />
+      </motion.div>
+      <motion.div variants={textyVariants} initial="hidden" animate="visible">
+        <ScrollingPay
+          direction={1}
+          key={"scrolling-text-1"}
+          paymentMethods={[
+            "amazon",
+            "master-card",
+            "american-express",
+            "google",
+            "apple-pay",
+            "paypal",
+          ]}
+        />
       </motion.div>
       <AnimatePresence>
         {showHeading && (

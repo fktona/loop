@@ -127,3 +127,6 @@ body {
 .animate-fade-in {
   animation: fade-in 1s ease-out forwards;
 }
+.img {
+  filter: brightness(0.2) invert(0.9);
+}
